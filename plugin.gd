@@ -46,7 +46,7 @@ func handles(object):
 	return true
 
 
-func action_changed(index):
+func action_changed(index:int):
 	mouse_action = index
 
 

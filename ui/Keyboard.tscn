@@ -12,6 +12,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -148,7 +149,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "1"
+text = "TAB"
 
 [node name="Key2" type="Button" parent="VBoxContainer/Numbers"]
 margin_left = 54.0
@@ -158,7 +159,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "2"
+text = "1"
 
 [node name="Key3" type="Button" parent="VBoxContainer/Numbers"]
 margin_left = 109.0
@@ -168,7 +169,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "3"
+text = "2"
 
 [node name="Key4" type="Button" parent="VBoxContainer/Numbers"]
 margin_left = 164.0
@@ -178,7 +179,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "4"
+text = "3"
 
 [node name="Key5" type="Button" parent="VBoxContainer/Numbers"]
 margin_left = 219.0
@@ -188,7 +189,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "5"
+text = "4"
 
 [node name="Key6" type="Button" parent="VBoxContainer/Numbers"]
 margin_left = 274.0
@@ -198,7 +199,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "6"
+text = "5"
 
 [node name="Key7" type="Button" parent="VBoxContainer/Numbers"]
 margin_left = 329.0
@@ -208,7 +209,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "7"
+text = "6"
 
 [node name="Key8" type="Button" parent="VBoxContainer/Numbers"]
 margin_left = 384.0
@@ -218,7 +219,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "8"
+text = "7"
 
 [node name="Key9" type="Button" parent="VBoxContainer/Numbers"]
 margin_left = 439.0
@@ -228,7 +229,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "9"
+text = "8"
 
 [node name="Key10" type="Button" parent="VBoxContainer/Numbers"]
 margin_left = 494.0
@@ -238,12 +239,13 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "0"
+text = "9"
 
 [node name="Key11" type="Button" parent="VBoxContainer/Numbers"]
 margin_left = 549.0
 margin_right = 600.0
 margin_bottom = 47.0
+focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
@@ -263,7 +265,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "TAB"
+text = "q"
 
 [node name="Key2" type="Button" parent="VBoxContainer/Letters1"]
 margin_left = 60.0
@@ -273,7 +275,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "q"
+text = "w"
 
 [node name="Key3" type="Button" parent="VBoxContainer/Letters1"]
 margin_left = 120.0
@@ -283,7 +285,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "w"
+text = "e"
 
 [node name="Key4" type="Button" parent="VBoxContainer/Letters1"]
 margin_left = 181.0
@@ -293,7 +295,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "e"
+text = "r"
 
 [node name="Key5" type="Button" parent="VBoxContainer/Letters1"]
 margin_left = 241.0
@@ -303,7 +305,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "r"
+text = "t"
 
 [node name="Key6" type="Button" parent="VBoxContainer/Letters1"]
 margin_left = 302.0
@@ -313,7 +315,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "t"
+text = "y"
 
 [node name="Key7" type="Button" parent="VBoxContainer/Letters1"]
 margin_left = 362.0
@@ -323,7 +325,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "y"
+text = "u"
 
 [node name="Key8" type="Button" parent="VBoxContainer/Letters1"]
 margin_left = 422.0
@@ -333,7 +335,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "u"
+text = "i"
 
 [node name="Key9" type="Button" parent="VBoxContainer/Letters1"]
 margin_left = 483.0
@@ -343,7 +345,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "i"
+text = "o"
 
 [node name="Key10" type="Button" parent="VBoxContainer/Letters1"]
 margin_left = 543.0
@@ -353,7 +355,7 @@ focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
-text = "o"
+text = "p"
 
 [node name="Letters2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 152.0

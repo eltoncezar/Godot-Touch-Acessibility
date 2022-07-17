@@ -153,15 +153,21 @@ func insert_key(key):
 		"ENTER":
 			key_modifier = true
 			key_event.scancode = KEY_ENTER
-	if focus is TextEdit:
+	if focus is TextEdit or focus is LineEdit:
 		if !key_modifier:
 			if key_string == " ":
 				focus.insert_text_at_cursor(key_string)
 			else:
 				if shift_hold:
-					focus.insert_text_at_cursor(key_string.to_upper())
+					if focus is LineEdit:
+						focus.append_at_cursor(key_string.to_upper())
+					else:
+						focus.insert_text_at_cursor(key_string.to_upper())
 				else:
-					focus.insert_text_at_cursor(key_string.to_lower())
+					if focus is LineEdit:
+						focus.append_at_cursor(key_string.to_lower())
+					else:
+						focus.insert_text_at_cursor(key_string.to_lower())
 		else:
 			key_event.pressed = true
 			key_modifier = false

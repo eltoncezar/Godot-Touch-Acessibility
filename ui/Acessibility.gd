@@ -10,30 +10,37 @@ var keyboard_is_shown = true
 
 
 func _ready():
-	set_options()
+	#set_options()
+	var show_keyboard_chekbox = $ScrollContainer/VBoxContainer/CheckButton
+	show_keyboard_chekbox.pressed = keyboard_is_shown
+
+	var container = $ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer5
+	container.visible = false
+	
+	for b in container.get_children():
+		b.connect("toggled", self, "_button_pressed", [b])
 
 
 func _process(_delta):
 	var focus = get_focus_owner()
-	if focus is TextEdit:
+	if focus is TextEdit or focus is LineEdit:
 		focus.virtual_keyboard_enabled = keyboard_is_shown
 		if !keyboard_is_shown:
 			OS.hide_virtual_keyboard()
 
 
 func set_options():
-	var options = $ScrollContainer/VBoxContainer/OptionButton
+	var options = $ScrollContainer/VBoxContainer/HBoxContainer4/OptionButton
 	options.clear()
 	options.add_item("Pass", 0)
 	options.add_item("Left Button", 1)
 	options.add_item("Right Button", 2)
 	options.add_item("Middle Button", 3)
 	options.add_item("Scroll", 4)
-	var show_keyboard_chekbox = $ScrollContainer/VBoxContainer/CheckButton
-	show_keyboard_chekbox.pressed = keyboard_is_shown
-
 
 func action_selected(index):
+	var button = get_node("ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer5/" + str(index))
+	button.set_pressed_no_signal(true)
 	emit_signal("action_changed", index)
 
 
@@ -141,3 +148,25 @@ func paste():
 
 func keyboard_shown(shown):
 	keyboard_is_shown = shown
+
+var last_pressed:Button
+func _button_pressed(pressed, target):
+	prints("called button pressed", pressed, target)
+	if pressed and last_pressed != target:
+		last_pressed = target
+		emit_signal("action_changed", int(target.get_name()))
+
+
+func _on_CheckButton_toggled(button_pressed):
+	var container = $ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer5
+	var btn:Button = get_node("ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer5/1")
+	
+	if button_pressed:
+		container.visible = true
+		#btn.set_pressed_no_signal(true)
+		btn.set_pressed(true)
+		#emit_signal("action_changed", 1)
+	else:
+		container.visible = false
+		btn.set_pressed(false)
+		#emit_signal("action_changed", 0)
